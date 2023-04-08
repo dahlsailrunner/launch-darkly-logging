@@ -52,9 +52,11 @@ context, and the level is easily configured (LaunchDarkly is configured for `Deb
 }
 ```
 
-The source contexts that I've seen are:
+Here are notes from the [LaunchDarkly docs](https://docs.launchdarkly.com/sdk/features/logging#net-server-side) about the source contexts:
 
-* LaunchDarkly.Sdk
-* LaunchDarkly.Sdk.Events
-* LaunchDarkly.Sdk.DataSource
-* LaunchDarkly.Sdk.Evaluation (returns informational entry if flag doesn't exist)
+* `LaunchDarkly.Sdk`: general messages about the operation of the SDK client.
+* `LaunchDarkly.Sdk.DataSource`: messages about how the SDK client receives feature flag data, such as if the connection to LaunchDarkly has been interrupted.
+* `LaunchDarkly.Sdk.DataStore` (or more specific names like `LaunchDarkly.Sdk.DataStore.Redis`): messages about how the SDK client stores feature flag data, such as if you are using a database integration.
+* `LaunchDarkly.Sdk.Evaluation`: messages about unusual conditions during feature flag evaluation, such as if a feature flag could not be evaluated because its configuration is invalid.
+* `LaunchDarkly.Sdk.Events`: messages about analytics events, such as if event data could not be sent to LaunchDarkly due to a network problem.
+
