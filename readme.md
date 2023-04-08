@@ -57,4 +57,4 @@ The source contexts that I've seen are:
 * LaunchDarkly.Sdk
 * LaunchDarkly.Sdk.Events
 * LaunchDarkly.Sdk.DataSource
-* LaunchDarkly.SDk.Evaluation (returns informational entry if flag doesn't exist)
+* LaunchDarkly.Sdk.Evaluation (returns informational entry if flag doesn't exist)
